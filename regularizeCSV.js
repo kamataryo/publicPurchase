@@ -1,5 +1,6 @@
 var path = './01_workersprice_201502.csv';
-var dimension = "職種,都道府県,労務単価";
+var dimension = "id,適用日,職種,都道府県,労務単価";
+var appliedDay = "2015/02/01"
 
 var parseCSV = function (path){
 	var fs = require('fs');
@@ -13,7 +14,7 @@ var parseCSV = function (path){
 		for (var i = 1 ; i < rowsParsed.length; i++) {
 			colsParsed = rowsParsed[i].split(",");
 			for (var j = 1 ; j < colsParsed.length; j++) {
-				result += [header[j],colsParsed[0],colsParsed[j]].join(",")+"\r\n";
+				result += (i+j-2).toString() + "," + appliedDay + "," + [header[j],colsParsed[0],colsParsed[j]].join(",")+"\r\n";
 			};
 		};
 		fs.writeFile(path + '.regularized.csv', result, function(err){

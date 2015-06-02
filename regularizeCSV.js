@@ -1,6 +1,6 @@
 var path = './01_workersprice_201502.csv';
 var dimension = "id,適用日,職種,都道府県,労務単価";
-var appliedDay = "2015/02/01"
+var appliedDay = "2015-02-01"
 
 var parseCSV = function (path){
 	var fs = require('fs');

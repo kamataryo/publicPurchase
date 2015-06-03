@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" id="sgvzlr_script" src="http://sgvizler.googlecode.com/svn/release/0.5/sgvizler.js"></script>
+<script type="text/javascript">
+  $(document).ready(sgvizler.go());
+</script>
+<title>公共工事設計労務単価</title>
+</head>
+<body>
+<h1>公共工事設計労務単価</h1>
+
+<div id="sgvizler-sample"
+data-sgvizler-endpoint="http://lodcu.cs.chubu.ac.jp/SparqlEPCU/api/workers_price"
+data-sgvizler-query="
+SELECT ?job ( round(avg(xsd:integer(?price))) AS ?avg)
+WHERE { 
+  ?uri <http://imi.ipa.go.jp/ns/200#%E9%87%91%E9%A1%8D_%E5%80%A4> ?price;
+<http://schema.org/jobTitle> ?job.
+}
+GROUP BY ?job
+ORDER BY DESC(?avg)
+limit 10
+"
+data-sgvizler-chart="gColumnChart"
+data-sgvizler-loglevel="2"
+data-sgvizler-chart-options="title=公共工事設計労務単価"
+style="width:800px; height:400px;">
+</div>
+
+</body>
+</html>

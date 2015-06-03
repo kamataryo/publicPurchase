@@ -1,0 +1,22 @@
+{
+  "name": "publicPurchase",
+  "version": "1.0.0",
+  "description": "Scripts to export some files in some formats",
+  "main": "regularizeCSV.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KamataRyo/publicPurchase.git"
+  },
+  "author": "kamataryo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KamataRyo/publicPurchase/issues"
+  },
+  "homepage": "https://github.com/KamataRyo/publicPurchase",
+  "devDependencies": {
+    "ejs": "^2.3.1"
+  }
+}

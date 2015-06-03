@@ -6,6 +6,7 @@ yyyy年mm月から適用する公共工事設計労務単価。
 データ元がpdfで利用しにくいため、利用しやすいようcsv化したものです。
 
 ## RDF
+Tuttle形式
 Linkdata.orgにもアップロードしています。
 [アップロード先](http://linkdata.org/work/rdf1s3253i)
 

@@ -1,3 +1,5 @@
+//2x2のcsvを第一正規化する
+
 var csv_from = './data/01_workersprice_201502.csv';
 var csv_into = './exported/01_workersprice_201502.csv';
 var html_into = './index.html';

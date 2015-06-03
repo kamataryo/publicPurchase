@@ -29,6 +29,24 @@ data-sgvizler-chart="gColumnChart"
 data-sgvizler-loglevel="2"
 data-sgvizler-chart-options="title=公共工事設計労務単価"
 style="width:800px; height:400px;">
+
+<div id="sgvizler-sample"
+data-sgvizler-endpoint="http://lodcu.cs.chubu.ac.jp/SparqlEPCU/api/workers_price"
+data-sgvizler-query="
+SELECT ?job ( round(avg(xsd:integer(?price))) AS ?avg)
+WHERE { 
+  ?uri <http://imi.ipa.go.jp/ns/200#%E9%87%91%E9%A1%8D_%E5%80%A4> ?price;
+<http://schema.org/jobTitle> ?job.
+}
+GROUP BY ?job
+ORDER BY DESC(?avg)
+limit 10
+"
+data-sgvizler-chart="gColumnChart"
+data-sgvizler-loglevel="2"
+data-sgvizler-chart-options="title=公共工事設計労務単価"
+style="width:800px; height:400px;">
+
 </div>
 
 </body>

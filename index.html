@@ -38,6 +38,7 @@ data-sgvizler-endpoint="http://lodcu.cs.chubu.ac.jp/SparqlEPCU/api/workers_price
 data-sgvizler-query="
 SELECT ?pref ( round(avg(xsd:integer(?price))) AS ?avg)
 WHERE {
+	<http://schema.org/jobTitle>:"普通作業員"
   ?uri <http://imi.ipa.go.jp/ns/200#%E9%87%91%E9%A1%8D_%E5%80%A4> ?price;
 <http://imi.ipa.go.jp/ns/200#%E5%AE%9A%E5%9E%8B%E4%BD%8F%E6%89%80_%E9%83%BD%E9%81%93%E5%BA%9C%E7%9C%8C> ?pref.
 }

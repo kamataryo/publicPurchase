@@ -14,43 +14,26 @@
 <h1>公共工事設計労務単価</h1>
 
 <div id="sgvizler-sample1"
-data-sgvizler-endpoint="http://lodcu.cs.chubu.ac.jp/SparqlEPCU/api/workers_price"
-data-sgvizler-query="
-SELECT ?job ( round(avg(xsd:integer(?price))) AS ?avg)
-WHERE { 
-  ?uri <http://imi.ipa.go.jp/ns/200#%E9%87%91%E9%A1%8D_%E5%80%A4> ?price;
-<http://schema.org/jobTitle> ?job.
-}
-GROUP BY ?job
-ORDER BY DESC(?avg)
-"
-data-sgvizler-chart="gColumnChart"
-data-sgvizler-loglevel="2"
-data-sgvizler-chart-options="title=公共工事設計労務単価"
-style="width:800px; height:400px;">
+	data-sgvizler-endpoint="http://lodcu.cs.chubu.ac.jp/SparqlEPCU/api/workers_price"
+	data-sgvizler-query="
+		SELECT ?job ( round(avg(xsd:integer(?price))) AS ?avg)
+		WHERE { 
+ 			?uri <http://imi.ipa.go.jp/ns/200#%E9%87%91%E9%A1%8D_%E5%80%A4> ?price;
+			<http://schema.org/jobTitle> ?job.
+		}
+		GROUP BY ?job
+		ORDER BY DESC(?avg)
+	"
+	data-sgvizler-chart="gColumnChart"
+	data-sgvizler-loglevel="2"
+	data-sgvizler-chart-options="title=公共工事設計労務単価"
+	style="width:800px; height:800px;">
 </div>
 
 
 
 
-<div id="sgvizler-sample2"
-data-sgvizler-endpoint="http://lodcu.cs.chubu.ac.jp/SparqlEPCU/api/workers_price"
-data-sgvizler-query="
-SELECT ?job ?price
-WHERE {
-	?uri <http://imi.ipa.go.jp/ns/200#%E9%87%91%E9%A1%8D_%E5%80%A4> ?price;
-	<http://schema.org/jobTitle> ?job.
-}
-GROUP BY ?job
-ORDER BY ?price
-LIMIT 100
-"
-data-sgvizler-chart="gColumnChart"
-data-sgvizler-loglevel="2"
-data-sgvizler-chart-options="title=普通作業員都道府県間比較"
-style="width:800px; height:400px;">
 
-</div>
 
 </body>
 </html>
